@@ -17,12 +17,11 @@ while True:
     logging.debug('Listening to PORT '+str(port)) 
     logging.debug('Waiting for connection.')
     serv_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    logging.debug('Connected.') 
     serv_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1) 
     serv_socket.bind(addr) 
     serv_socket.listen(10)
     con, client = serv_socket.accept() 
-    logging.debug('Connected.') 
+    logging.debug('Accepting connections.') 
     logging.debug('Waiting for messages.') 
     while True:
         recebe = con.recv(4096) 
